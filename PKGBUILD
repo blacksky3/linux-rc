@@ -107,8 +107,8 @@ prepare(){
   plain ""
 
   # Copy the config file first
-  # Copy "${srcdir}"/config to "${srcdir}"/linux-${pkgver}/.config
-  msg2 "Copy "${srcdir}"/config to "${srcdir}"/linux-$pkgver/.config"
+  # Copy "${srcdir}"/config to "${srcdir}"/linux-$major-$rcversion/.config
+  msg2 "Copy "${srcdir}"/config to "${srcdir}"/linux-$major-$rcversion/.config"
   cp "${srcdir}"/config .config
 
   sleep 2s
