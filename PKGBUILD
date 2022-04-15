@@ -53,10 +53,10 @@ for _p in "${pkgname[@]}"; do
     _package${_p#$pkgbase}
   }"
 done
-pkgver=5.18rc1
+pkgver=5.18rc2
 pkgrel=1
 major=5.18
-rcversion=rc1
+rcversion=rc2
 arch=(x86_64)
 url='https://www.kernel.org/'
 license=(GPL2)
@@ -66,7 +66,7 @@ if [[ "$_compiler" = "2" ]]; then
 fi
 options=(!strip)
 
-archlinuxpath=https://raw.githubusercontent.com/archlinux/svntogit-packages/5a760e76311f5e8a9bb6c8fa69cc17d59e705322/trunk
+archlinuxpath=https://raw.githubusercontent.com/archlinux/svntogit-packages/a2a724a2d34d9d055359d79b4babc9d329778978/trunk
 patchpath=https://raw.githubusercontent.com/blacksky3/patches/main/5.17
 
 source=(https://github.com/torvalds/linux/archive/refs/tags/v$major-$rcversion.tar.gz
@@ -408,9 +408,9 @@ _package(){
 
   msg2 "Installing modules..."
   if [[ "$_compiler" = "1" ]]; then
-    make ARCH=${ARCH} CC=${CC} CXX=${CXX} HOSTCC=${HOSTCC} HOSTCXX=${HOSTCXX} INSTALL_MOD_PATH="${pkgdir}"/usr INSTALL_MOD_STRIP=1 -j$(nproc) modules_install
+    make ARCH=${ARCH} CC=${CC} CXX=${CXX} HOSTCC=${HOSTCC} HOSTCXX=${HOSTCXX} INSTALL_MOD_PATH="${pkgdir}"/usr INSTALL_MOD_STRIP=1 DEPMOD=/doesnt/exist -j$(nproc) modules_install # Suppress depmod
   elif [[ "$_compiler" = "2" ]]; then
-    make ARCH=${ARCH} CC=${CC} CXX=${CXX} LLVM=1 LLVM_IAS=1 HOSTCC=${HOSTCC} HOSTCXX=${HOSTCXX} INSTALL_MOD_PATH="${pkgdir}"/usr INSTALL_MOD_STRIP=1 -j$(nproc) modules_install
+    make ARCH=${ARCH} CC=${CC} CXX=${CXX} LLVM=1 LLVM_IAS=1 HOSTCC=${HOSTCC} HOSTCXX=${HOSTCXX} INSTALL_MOD_PATH="${pkgdir}"/usr INSTALL_MOD_STRIP=1 DEPMOD=/doesnt/exist -j$(nproc) modules_install # Suppress depmod
   fi
 
   # remove build and source links
@@ -500,8 +500,8 @@ _package-headers(){
   ln -sr "$builddir" "$pkgdir/usr/src/$pkgbase"
 }
 
-sha256sums=('a7ae23d354937723b3ee65513c2707c02541a0553ae9a7d5c7136525335d4423'
-            '3bbdd34b664cb331616469d0900951a175392a1244d3cc6a3d1f30c432434460'
+sha256sums=('427f32cc7ed4495781dd75f934a98d5351f4d0e4451609958f147db37e5449f1'
+            'c0ef360e34fd21c23509224abae894b0d6d37256cccf82575062a05986ee5dba'
             '4bd1bac2959b989af0dae573123b9aff7c609090537e94ee0ae05099cad977b8'
             '4d385d6a7f7fd9f9aba19d5c24c24814e1af370ff245c8dc98b03482a27cb257'
             'a043e4c393395e6ad50d35c973fa0952f5deb109aee8a23103e24297c027641e'
