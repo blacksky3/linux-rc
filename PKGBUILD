@@ -53,10 +53,10 @@ for _p in "${pkgname[@]}"; do
     _package${_p#$pkgbase}
   }"
 done
-pkgver=5.18rc2
+pkgver=5.18rc3
 pkgrel=1
 major=5.18
-rcversion=rc2
+rcversion=rc3
 arch=(x86_64)
 url='https://www.kernel.org/'
 license=(GPL2)
@@ -500,7 +500,7 @@ _package-headers(){
   ln -sr "$builddir" "$pkgdir/usr/src/$pkgbase"
 }
 
-sha256sums=('427f32cc7ed4495781dd75f934a98d5351f4d0e4451609958f147db37e5449f1'
+sha256sums=('b518d107c6727ebd74eb73b1fa36fbf5aee4e16ec39b1e3a0208ebb5fdd1127e'
             'c0ef360e34fd21c23509224abae894b0d6d37256cccf82575062a05986ee5dba'
             '4bd1bac2959b989af0dae573123b9aff7c609090537e94ee0ae05099cad977b8'
             '4d385d6a7f7fd9f9aba19d5c24c24814e1af370ff245c8dc98b03482a27cb257'
