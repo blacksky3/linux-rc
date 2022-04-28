@@ -53,7 +53,7 @@ for _p in "${pkgname[@]}"; do
     _package${_p#$pkgbase}
   }"
 done
-pkgver=5.18rc3
+pkgver=5.18rc4
 pkgrel=1
 major=5.18
 rcversion=rc3
@@ -66,7 +66,7 @@ if [[ "$_compiler" = "2" ]]; then
 fi
 options=(!strip)
 
-archlinuxpath=https://raw.githubusercontent.com/archlinux/svntogit-packages/a2a724a2d34d9d055359d79b4babc9d329778978/trunk
+archlinuxpath=https://raw.githubusercontent.com/archlinux/svntogit-packages/db7716480268930de34d45778edad50994fc134f/trunk
 patchpath=https://raw.githubusercontent.com/blacksky3/patches/main/5.17
 
 source=(https://github.com/torvalds/linux/archive/refs/tags/v$major-$rcversion.tar.gz
@@ -501,7 +501,7 @@ _package-headers(){
 }
 
 sha256sums=('b518d107c6727ebd74eb73b1fa36fbf5aee4e16ec39b1e3a0208ebb5fdd1127e'
-            'c0ef360e34fd21c23509224abae894b0d6d37256cccf82575062a05986ee5dba'
+            '718abbbc528f1ea6db31b05c4fd00467c23bfefa678dfc32cff482725c26b730'
             '4bd1bac2959b989af0dae573123b9aff7c609090537e94ee0ae05099cad977b8'
             '4d385d6a7f7fd9f9aba19d5c24c24814e1af370ff245c8dc98b03482a27cb257'
             'a043e4c393395e6ad50d35c973fa0952f5deb109aee8a23103e24297c027641e'
