@@ -4,7 +4,7 @@ Linux kernel build for Archlinux with Arch, Block, CPU, Futex and kernel_compile
 
 # Version
 
-- 5.18-rc6
+- 5.18-rc7
 
 # Build
 
