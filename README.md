@@ -4,12 +4,12 @@ Linux kernel build for Archlinux with Arch, Block, CPU, Futex and kernel_compile
 
 # Version
 
-- 5.18-rc7
+- 5.19-rc1
 
 # Build
 
     git clone https://github.com/blacksky3/linux-rc.git
-    cd linux-rc/5.18
+    cd linux-rc/5.19
     env_compiler=(1 or 2) makepkg -s
 
 # Build variables
