@@ -53,10 +53,10 @@ for _p in "${pkgname[@]}"; do
     _package${_p#$pkgbase}
   }"
 done
-pkgver=5.19rc3
+pkgver=5.19rc4
 pkgrel=1
 major=5.19
-rcversion=rc3
+rcversion=rc4
 arch=(x86_64)
 url='https://www.kernel.org/'
 license=(GPL2)
@@ -66,7 +66,7 @@ if [[ "$_compiler" = "2" ]]; then
 fi
 options=(!strip)
 
-archlinuxpath=https://raw.githubusercontent.com/archlinux/svntogit-packages/b4cfe6ae8029f4d58b72a8565ea95ddfcd43c0df/trunk
+archlinuxpath=https://raw.githubusercontent.com/archlinux/svntogit-packages/fd28b6a2f18674e1fcf02c52fc25264667df33f6/trunk
 patchpath=https://raw.githubusercontent.com/blacksky3/patches/main/5.18
 
 source=(https://github.com/torvalds/linux/archive/refs/tags/v$major-$rcversion.tar.gz
@@ -505,8 +505,8 @@ _package-headers(){
   ln -sr "$builddir" "$pkgdir/usr/src/$pkgbase"
 }
 
-sha256sums=('d38da4f2094651d1ee766e864982df2433af33daed0b7bd159c52e2fa9d5f1cd'
-            '9f4fda38f1c59f7a20a76eff48a0cb302cb0e8e55bda53ec0f1807e10dcdad3a'
+sha256sums=('ccd7110dad8dcc260e2891ea3c89bd4aaad0cbe2c055b1280147e76ece20f06c'
+            '382aa201a6a6939210dd8668ab052724547b4bd489b38e97502bbd0848061b35'
             '4bd1bac2959b989af0dae573123b9aff7c609090537e94ee0ae05099cad977b8'
             '9c0e1dea6f645eee9b09cf7d264b17f00f636bdda35c93d354562dda0d674005'
             'ba63855b09eb27c4c33b4302560acec739e642ee8122d3c867b9f11deb06bc56'
