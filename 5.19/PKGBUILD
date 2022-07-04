@@ -53,10 +53,10 @@ for _p in "${pkgname[@]}"; do
     _package${_p#$pkgbase}
   }"
 done
-pkgver=5.19rc4
+pkgver=5.19rc5
 pkgrel=1
 major=5.19
-rcversion=rc4
+rcversion=rc5
 arch=(x86_64)
 url='https://www.kernel.org/'
 license=(GPL2)
@@ -66,7 +66,7 @@ if [[ "$_compiler" = "2" ]]; then
 fi
 options=(!strip)
 
-archlinuxpath=https://raw.githubusercontent.com/archlinux/svntogit-packages/fd28b6a2f18674e1fcf02c52fc25264667df33f6/trunk
+archlinuxpath=https://raw.githubusercontent.com/archlinux/svntogit-packages/1d8e9e2101a9783d4e0e68fec0f9e82b94d6f982/trunk
 patchpath=https://raw.githubusercontent.com/blacksky3/patches/main/5.18
 
 source=(https://github.com/torvalds/linux/archive/refs/tags/v$major-$rcversion.tar.gz
@@ -312,7 +312,7 @@ prepare(){
   scripts/config --enable CONFIG_X86_AMD_PSTATE
 
   sleep 2s
-  
+
   msg2 "Enable PERF_EVENTS_AMD_BRS"
   scripts/config --enable CONFIG_PERF_EVENTS_AMD_BRS
 
@@ -505,7 +505,7 @@ _package-headers(){
   ln -sr "$builddir" "$pkgdir/usr/src/$pkgbase"
 }
 
-sha256sums=('ccd7110dad8dcc260e2891ea3c89bd4aaad0cbe2c055b1280147e76ece20f06c'
+sha256sums=('7aa05b40165aa9ec60c7a9b78c0a14ff41d601d1db02e4f7b2565631986b86dd'
             '382aa201a6a6939210dd8668ab052724547b4bd489b38e97502bbd0848061b35'
             '4bd1bac2959b989af0dae573123b9aff7c609090537e94ee0ae05099cad977b8'
             '9c0e1dea6f645eee9b09cf7d264b17f00f636bdda35c93d354562dda0d674005'
